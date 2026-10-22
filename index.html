@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zai Games Library</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;color:#3d1729;background:radial-gradient(circle at 75% 0,#ffeb5a,transparent 30%),linear-gradient(135deg,#ff855f,#ffad55 50%,#ffcf5a);font-family:Arial,sans-serif}
+    header{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:24px;padding:18px clamp(18px,4vw,52px);background:rgba(255,247,218,.9);border-bottom:1px solid rgba(105,35,52,.14);backdrop-filter:blur(18px)}
+    .brand{font-size:20px;font-weight:900;letter-spacing:-.06em}.mark{display:inline-grid;place-items:center;width:36px;height:36px;margin-right:10px;border-radius:11px;color:#fff;background:#ff496c;transform:rotate(-5deg)}
+    .filters{display:flex;flex:1;justify-content:flex-end;gap:9px}input,select{height:42px;padding:0 13px;border:1px solid #efbd8b;border-radius:12px;color:#3d1729;background:rgba(255,255,255,.75);font:inherit;outline:0}input{width:min(330px,45vw)}
+    main{padding:42px clamp(18px,4vw,52px) 70px}.intro span{font-size:10px;font-weight:800;letter-spacing:.16em}.intro h1{max-width:700px;margin:8px 0 10px;font-size:clamp(38px,6vw,72px);line-height:.95;letter-spacing:-.06em}.intro p{margin:0 0 30px;color:#7b3c4d}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}.game{overflow:hidden;min-height:245px;border-radius:20px;color:#fff;background:#17171d;box-shadow:0 15px 35px rgba(87,32,50,.16)}.game.hidden{display:none}
+    .art{height:155px;display:grid;place-items:center;background:linear-gradient(145deg,#b674ff,#642cda 55%,#25115f)}.art span{display:grid;place-items:center;width:76px;height:76px;border:1px solid rgba(255,255,255,.3);border-radius:22px;background:rgba(255,255,255,.15);font-size:27px;font-weight:900;transform:rotate(-6deg)}
+    .art-orange,.art-amber{background:linear-gradient(145deg,#ffcf5a,#f36b3f,#7c2f30)}.art-lime,.art-green{background:linear-gradient(145deg,#dfff78,#55bb38,#086877)}.art-red,.art-coral{background:linear-gradient(145deg,#ff8d69,#d21352,#3d1428)}.art-yellow{background:linear-gradient(145deg,#fff36a,#ffb720,#ee6d22)}.art-blue,.art-sky,.art-cyan{background:linear-gradient(145deg,#7ff5ff,#2671df,#2433a5)}.art-pink{background:linear-gradient(145deg,#ff8bcf,#e53581,#6b1bb2)}.art-indigo,.art-violet,.art-purple{background:linear-gradient(145deg,#b674ff,#642cda,#25115f)}.art-teal{background:linear-gradient(145deg,#69edd6,#0b9e9f,#175270)}.art-slate{background:linear-gradient(145deg,#7187a3,#25394e,#111820)}
+    .copy{padding:15px}.copy small{color:#ffcf5a;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.copy h2{margin:4px 0 8px;font-size:18px}.copy p{margin:0;color:rgba(255,255,255,.58);font-size:10px}.empty{display:none;padding:70px 0;text-align:center;font-weight:800}.empty.visible{display:block}
+    @media(max-width:600px){header{align-items:flex-start;flex-direction:column}.filters{width:100%;justify-content:stretch}.filters>*{min-width:0;flex:1}input{width:auto}main{padding-top:28px}}
+  </style>
+</head>
+<body>
+  <header><div class="brand"><span class="mark">Z</span>ZAI GAMES</div><div class="filters"><input id="search" type="search" placeholder="Search games" aria-label="Search games"><select id="category" aria-label="Filter by category"><option value="">All games</option><option value="Action">Action</option><option value="Adventure">Adventure</option><option value="Platformer">Platformer</option><option value="Popular">Popular</option><option value="Puzzle">Puzzle</option><option value="Racing">Racing</option><option value="Sports">Sports</option><option value="Tycoon">Tycoon</option></select></div></header>
+  <main><div class="intro"><span>THE COMPLETE COLLECTION</span><h1>Find your next obsession.</h1><p>30 games in the Zai Games library.</p></div><section class="grid" id="grid">
+    <article class="game" data-title="li's long trail" data-category="Platformer">
+      <div class="art art-teal"><span>LT</span></div>
+      <div class="copy"><small>Platformer</small><h2>Li's Long Trail</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="george's journey" data-category="Adventure">
+      <div class="art art-slate"><span>GJ</span></div>
+      <div class="copy"><small>Adventure</small><h2>George's Journey</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="bistro boss" data-category="Tycoon">
+      <div class="art art-amber"><span>BB</span></div>
+      <div class="copy"><small>Tycoon</small><h2>Bistro Boss</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="lime leap" data-category="Platformer">
+      <div class="art art-lime"><span>LL</span></div>
+      <div class="copy"><small>Platformer</small><h2>Lime Leap</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="eaglercraft 26.2" data-category="Adventure">
+      <div class="art art-green"><span>EC</span></div>
+      <div class="copy"><small>Adventure</small><h2>Eaglercraft 26.2</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="neon run" data-category="Popular">
+      <div class="art art-violet"><span>NR</span></div>
+      <div class="copy"><small>Popular</small><h2>Neon Run</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="drift city" data-category="Racing">
+      <div class="art art-orange"><span>DC</span></div>
+      <div class="copy"><small>Racing</small><h2>Drift City</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="skybound" data-category="Adventure">
+      <div class="art art-sky"><span>SB</span></div>
+      <div class="copy"><small>Adventure</small><h2>Skybound</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="hoop stars" data-category="Sports">
+      <div class="art art-lime"><span>HS</span></div>
+      <div class="copy"><small>Sports</small><h2>Hoop Stars</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="pixel quest" data-category="Adventure">
+      <div class="art art-pink"><span>PQ</span></div>
+      <div class="copy"><small>Adventure</small><h2>Pixel Quest</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="turbo club" data-category="Racing">
+      <div class="art art-red"><span>TC</span></div>
+      <div class="copy"><small>Racing</small><h2>Turbo Club</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="stack up" data-category="Puzzle">
+      <div class="art art-yellow"><span>SU</span></div>
+      <div class="copy"><small>Puzzle</small><h2>Stack Up</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="arcade nights" data-category="Popular">
+      <div class="art art-cyan"><span>AN</span></div>
+      <div class="copy"><small>Popular</small><h2>Arcade Nights</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="goal rush" data-category="Sports">
+      <div class="art art-green"><span>GR</span></div>
+      <div class="copy"><small>Sports</small><h2>Goal Rush</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="candy merge" data-category="Puzzle">
+      <div class="art art-pink"><span>CM</span></div>
+      <div class="copy"><small>Puzzle</small><h2>Candy Merge</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="ninja dash" data-category="Action">
+      <div class="art art-indigo"><span>ND</span></div>
+      <div class="copy"><small>Action</small><h2>Ninja Dash</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="tiny town" data-category="Adventure">
+      <div class="art art-teal"><span>TT</span></div>
+      <div class="copy"><small>Adventure</small><h2>Tiny Town</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="court kings" data-category="Sports">
+      <div class="art art-orange"><span>CK</span></div>
+      <div class="copy"><small>Sports</small><h2>Court Kings</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="laser link" data-category="Puzzle">
+      <div class="art art-violet"><span>LL</span></div>
+      <div class="copy"><small>Puzzle</small><h2>Laser Link</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="battle bay" data-category="Action">
+      <div class="art art-blue"><span>BB</span></div>
+      <div class="copy"><small>Action</small><h2>Battle Bay</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="retro rally" data-category="Racing">
+      <div class="art art-yellow"><span>RR</span></div>
+      <div class="copy"><small>Racing</small><h2>Retro Rally</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="block party" data-category="Puzzle">
+      <div class="art art-coral"><span>BP</span></div>
+      <div class="copy"><small>Puzzle</small><h2>Block Party</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="shadow ops" data-category="Action">
+      <div class="art art-slate"><span>SO</span></div>
+      <div class="copy"><small>Action</small><h2>Shadow Ops</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="wave rider" data-category="Sports">
+      <div class="art art-cyan"><span>WR</span></div>
+      <div class="copy"><small>Sports</small><h2>Wave Rider</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="orbital" data-category="Adventure">
+      <div class="art art-purple"><span>OR</span></div>
+      <div class="copy"><small>Adventure</small><h2>Orbital</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="speed lane" data-category="Racing">
+      <div class="art art-red"><span>SL</span></div>
+      <div class="copy"><small>Racing</small><h2>Speed Lane</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="mini golf" data-category="Sports">
+      <div class="art art-green"><span>MG</span></div>
+      <div class="copy"><small>Sports</small><h2>Mini Golf</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="maze pop" data-category="Puzzle">
+      <div class="art art-yellow"><span>MP</span></div>
+      <div class="copy"><small>Puzzle</small><h2>Maze Pop</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="hero rise" data-category="Action">
+      <div class="art art-orange"><span>HR</span></div>
+      <div class="copy"><small>Action</small><h2>Hero Rise</h2><p>0 playing</p></div>
+    </article>
+    <article class="game" data-title="comet clash" data-category="Action">
+      <div class="art art-purple"><span>CC</span></div>
+      <div class="copy"><small>Action</small><h2>Comet Clash</h2><p>0 playing</p></div>
+    </article></section><div class="empty" id="empty">No games match your search.</div></main>
+  <script>
+    const search=document.getElementById("search"),category=document.getElementById("category"),cards=[...document.querySelectorAll(".game")],empty=document.getElementById("empty");
+    function filter(){const query=search.value.trim().toLowerCase(),selected=category.value;let visible=0;cards.forEach(card=>{const show=card.dataset.title.includes(query)&&(!selected||card.dataset.category===selected);card.classList.toggle("hidden",!show);if(show)visible++});empty.classList.toggle("visible",visible===0)}
+    search.addEventListener("input",filter);category.addEventListener("change",filter);
+  </script>
+</body>
+</html>
